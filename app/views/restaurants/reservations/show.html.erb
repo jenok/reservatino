@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>RESTAURANTS::RESERVATION#SHOW</h2>
+
+  <%= @reservation %>
+  <hr>
+  <div class="card-reservation-show">
+    <p> Customer Name: <%= @customer.name %> </p>
+    <p> Customer ID: <%= @reservation.customer_id %> </p>
+    <p> Schedule: <%= @reservation.time %> </p>
+  </div>
+</div>
