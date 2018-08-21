@@ -7,8 +7,7 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <% if customer_signed_in? %>
-
+    <% if customer_signed_in? || restaurant_signed_in? %>
       <!-- Links when logged in -->
       <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
@@ -39,7 +38,8 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_customer_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Login as customer"), new_customer_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Login as restaurant"), new_restaurant_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 
