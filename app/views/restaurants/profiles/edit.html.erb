@@ -1,3 +1,17 @@
 <div class="container">
   <h2>Edit Profile with simple_form</h2>
+  <%= simple_form_for(edit_restaurants_profile_path) do |f| %>
+      <%= f.input :category%>
+      <%= f.input :dresscode%>
+      <%= f.input :operation_time%>
+      <%= f.input :style%>
+      <%= f.input :cuisine%>
+      <%= f.input :tel%>
+      <%= f.input :city%>
+      <%= f.input :street%>
+      <%= f.input :zipcode%>
+      <%= f.submit "Save", class: "btn-equipment-add btn-treehouse btn-add" %>
+      <% end %>
+</div>
+
 </div>

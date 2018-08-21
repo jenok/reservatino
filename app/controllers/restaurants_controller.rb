@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  skip_before_action :authenticate_customer!, only: :show
+  skip_before_action :authenticate_customer!, only: [:show, :index]
 
   def index
     @restaurants = policy_scope(Restaurant)
