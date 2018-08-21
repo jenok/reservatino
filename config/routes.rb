@@ -24,7 +24,8 @@ devise_for :customers
   #   resources :reservations, only: [:create]
   # end
   namespace :restaurants do
-    resources :reservations, only: :index
+    resources :reservations, only: [:index, :show]
+    resources :profiles, only: [:edit, :update]
   end
 
   namespace :customers do
