@@ -1,34 +1,10 @@
-<h1>Reservatino</h1>
-<p>No more No Show</p>
+<div class="container">
+  <h1>Reservatino#home</h1>
+  <p style="color:green">SET A BANNE IMAGE WITH SHORT DESCRIPTION</p>
 
-<html>
-<header>
-<title>Restaurants Index</title>
-</header>
-<body>
+  <hr>
+  <%= render "shared/card" %>
 
-  <!-- card-restaurants -->
-  <div class="blog-card">
-    <div class="title-content">
-      <h3><a href="#">Tim Raue</a></h3>
-      <div class="intro"> <a href="#">Berlin</a> </div>
-    </div>
-    <div class="card-info">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim...
-      <a href="#">Make a Reservation!<span class="licon icon-arr icon-black"></span></a>
-    </div>
-    <div class="utility-info">
-      <ul class="utility-list">
-        <li><span class="licon icon-like"></span><a href="#">2</a></li>
-        <li><span class="licon icon-com"></span><a href="#">12</a></li>
-        <li><span class="licon icon-dat"></span>03 jun 2017</li>
-        <li><span class="licon icon-tag"></span><a href="#">Photos</a>, <a href="#">Nice</a></li>
-      </ul>
-    </div>
-    <div class="gradient-overlay"></div>
-    <div class="color-overlay"></div>
-  </div>
+  <%= link_to "GO TO RESTAURANT INDEX", customers_restaurants_path %>
 
-</body>
-</html>
-
+</div>
