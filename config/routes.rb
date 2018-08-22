@@ -29,6 +29,6 @@ devise_for :customers
   end
 
   namespace :customers do
-    resources :restaurants, only: :index # when you wanna add a new route, do like this -> [:index, :show]
+    resources :restaurants, only: [:index, :show] # when you wanna add a new route, do like this -> [:index, :show]
   end
 end
