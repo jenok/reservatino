@@ -1,0 +1,26 @@
+<div class="white-wrapper">
+  <div class="container">
+    <h1>This is the Restaurant Show Page, it shows one individualt Restaurant</h1>
+
+      <ul>
+        <li><%= @restaurant.name %></li>
+        <li><%= @restaurant.opening_hours %></li>
+        <li><%= @restaurant.cuisine %></li>
+        <li><%= @restaurant.category %></li>
+        <li><%= @restaurant.dresscode %></li>
+        <li><%= @restaurant.cuisine %></li>
+        <li><%= @restaurant.email %></li>
+        <li><%= @restaurant.tel %></li>
+        <li><%= @restaurant.street %></li>
+        <li><%= @restaurant.zipcode %></li>
+        <li><%= @restaurant.city %></li>
+        <li><%= @restaurant.country %></li>
+      </ul>
+
+      <%= render "shared/map" %>
+
+      <%= link_to "Link to Restaurant Index", customers_restaurants_path, class: 'card-link' %>
+  </div>
+</div>
+
+

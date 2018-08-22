@@ -1,17 +1,22 @@
-  <div class="row">
-    <div class="card">
-      <% @restaurants.each do |restaurant| %>
-      <p>SECOND INSTRUCTION!</p>
-        <p><%= restaurant %></p>
-        <p style="color:blue"> DRY! ONE WILL HANDLE RESTAURANT CARD </p>
-        <p style="color:red"> ALWAYS USE DATA FROM SCHEMA. IN THIS CASE, IT WOULD BE restaurant.dresscode for example. IF YOU NEED MORE INFO, LET'S DISCUSS DATABASE ITSELF</p>
-        <p style="color:green"> SET A PIC FOR THIS CARD. IMPLEMENT CLOUDINARY </p>
-        <p style="color:red"> DON'T USE PLAIN HTML FOR A LINK. USE LINK_TO "", _path, class: "something"</p>
-      </div>
-    <% end %>
-  </div>
-</div>
+  <div class="white-wrapper">
+    <div class="container">
+      <div class="row">
+        <% @restaurants.each do |restaurant| %>
+        <div class="col-xs-12  col-sm-6 col-md-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
 
-<p>FIRST INSTRUSTION! (ROUTE -> CONTROLLER -> VIEW!)</p>
-<p>Go back to Sublime and find _card.html.erb</p>
-<p>"Command + P" and type "routes" and click. Then you can find route.rb. ON line 32of route.rb, You can check another instruction</p>
+            <div class="card-category"><%= restaurant.category %></div>
+            <div class="card-description">
+              <h2><%= restaurant.name %></h2>
+              <p><%= restaurant.street %></p>
+              <p><%= restaurant.city %></p>
+            </div>
+            <%= link_to "Link to Show", customers_restaurant_path(restaurant), class: 'card-link' %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
