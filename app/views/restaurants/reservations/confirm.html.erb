@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>RESTAURANTS::RESERVATION#EDIT</h2>
+  <p>Find me in app/views/restaurants/reservations/show.html.erb</p>
+  <hr>
+  <p> <%= current_restaurant.email %></p>
+  <p> Reservation ID: <%= @reservation.id %></p>
+
+  <%# simple_form_for(@reservation, url: restaurants_reservation_path(@reservation), method: :put) do |f| %>
+      <%# f.input :status%>
+      <%# f.submit "Save", class: "btn btn-primary" %>
+      <%# end %>
+  <%= link_to "Confirm", confirm_restaurants_reservation_path(@reservation), class: "btn btn-primary", method: :put %>
+</div>
+

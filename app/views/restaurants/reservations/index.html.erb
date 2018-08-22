@@ -5,6 +5,8 @@
   <%= link_to "Change Password", edit_restaurant_registration_path, class: "btn btn-primary" %>
   <%= link_to "Edit Profile", edit_restaurants_profile_path(current_restaurant), class: "btn btn-warning" %>
   <%= link_to "History", restaurants_reservations_path, class: "btn btn-danger" %>
+  <%= link_to "Chefs", restaurants_chefs_path, class: "btn btn-info" %>
+  <%= link_to "Menus", restaurants_menus_path, class: "btn btn-success" %>
 
   <hr>
 
@@ -15,7 +17,7 @@
         <% @reservations.each do |reservation| %>
           <% if reservation.status == "pending" %>
             <%= reservation.time %>
-            <%= link_to reservation, restaurants_reservation_path(reservation) %>
+            <p> <%= link_to reservation, restaurants_reservation_path(reservation) %> </p>
           <% end %>
         <% end %>
       </div>
@@ -27,8 +29,8 @@
         <% @reservations.each do |reservation| %>
           <% if reservation.status == "confirmed" %>
             <%= reservation.time %>
-            <%= link_to reservation, restaurants_reservation_path(reservation) %>
-          <% end %>
+            <p> <%= link_to reservation, restaurants_reservation_path(reservation) %>
+          <% end %> </p>
         <% end %>
       </div>
     </div>

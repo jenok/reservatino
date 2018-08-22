@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Restaurants::Chefs/:id#Edit</h1>
+  <hr>
+  <%= @chef %>
+  <%= @chef.name %>
+  <%= simple_form_for([:restaurants, @chef]) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :profile %>
+      <%= f.submit "Save", class: "btn btn-primary" %>
+  <% end %>
+</div>

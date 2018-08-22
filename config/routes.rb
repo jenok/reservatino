@@ -24,8 +24,16 @@ devise_for :customers
   #   resources :reservations, only: [:create]
   # end
   namespace :restaurants do
-    resources :reservations, only: [:index, :show, :edit, :update]
+    resources :reservations, only: [:index, :show, :edit, :update] do
+      member do
+        put "confirm"
+      end
+    end
     resources :profiles, only: [:edit, :update]
+    resources :chefs, only: [:index, :edit, :update, :destroy]
+    resources :menus, only: [:index, :edit, :update, :destroy]
+
+    # get "reservations/:id/confirm", to: "reservations#confirm"
   end
 
   namespace :customers do

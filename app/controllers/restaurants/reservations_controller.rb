@@ -3,27 +3,25 @@ class Restaurants::ReservationsController < ApplicationController
     skip_policy_scope
     @reservations = Reservation.all
   end
-
-  def history
-  end
-
   def show
-    raise
     skip_policy_scope
     @reservation = Reservation.find(params[:id])
     @customer = Customer.find(@reservation.customer_id)
   end
 
-  def edit
+  def confirm
     skip_policy_scope
     @reservation = Reservation.find(params[:id])
-    @restaurant = current_restaurant
+    @reservation.status = "confirm"
+    @reservation.save
+    redirect_to restaurants_reservations_path
   end
 
   def update
     skip_policy_scope
     @reservation = Reservation.find(params[:id])
-    @restaurant.update(reservation_params)
+    @reservation.update(reservation_params)
+    redirect_to restaurants_reservations_path
   end
 
   def reservation_params

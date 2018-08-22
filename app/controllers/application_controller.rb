@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   before_action :should_authenticate_customer!
 
   # Pundit: white-list approach.
-  after_action :verify_authorized, except: [:index, :show, :edit, :update], unless: :skip_pundit?
+  after_action :verify_authorized, except: [:index, :show, :edit, :update, :confirm, :destroy], unless: :skip_pundit?
   after_action :verify_policy_scoped, only: [:index, :show, :edit, :update], unless: :skip_pundit?
 
   # Uncomment when you *really understand* Pundit!

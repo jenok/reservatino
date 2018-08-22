@@ -1,9 +1,9 @@
 <div class="container">
   <h2>Edit Profile with simple_form</h2>
-  <%= simple_form_for(edit_restaurants_profile_path) do |f| %>
+  <%= simple_form_for(@restaurant, url: restaurants_profile_path(@restaurant)) do |f| %>
       <%= f.input :category%>
       <%= f.input :dresscode%>
-      <%= f.input :operation_time%>
+      <%= f.input :opening_hours%>
       <%= f.input :style%>
       <%= f.input :cuisine%>
       <%= f.input :tel%>
