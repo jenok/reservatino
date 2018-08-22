@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Restaurants::Menus#edit</h1>
+
+  <%= @menu %>
+  <%= @menu.name %>
+  <%= simple_form_for([:restaurants, @menu]) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :price %>
+      <%= f.submit "Save", class: "btn btn-primary" %>
+  <% end %>
+
+</div>

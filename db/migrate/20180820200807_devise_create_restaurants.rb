@@ -41,8 +41,8 @@ class DeviseCreateRestaurants < ActiveRecord::Migration[5.2]
       t.string :tel
       t.string :country
       t.string :city
-      t.string :street
-      t.string :zipcode
+      t.string :address
+
 
       t.timestamps null: false
     end

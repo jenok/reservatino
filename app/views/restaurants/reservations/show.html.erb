@@ -11,9 +11,10 @@
     <p> Seats: <%= @reservation.seats %> </p>
     <p> Request: <%= @reservation.request %> </p>
     <% if @reservation.status =="pending" %>
-      <%= link_to "Confirm", edit_restaurants_reservation_path, class: "btn btn-warning" %>
+      <%= link_to "Confirm", confirm_restaurants_reservation_path(@reservation), class: "btn btn-primary", method: :put %>
+      <%#= link_to "Confirm", restaurants_path, class: "btn btn-warning" %>
     <% end %>
   </div>
   <br>
-  <%= link_to "Back", restaurants_reservations_path %>
+  <%= link_to "Back", root_path %>
 </div>

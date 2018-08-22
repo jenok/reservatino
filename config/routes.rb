@@ -24,11 +24,19 @@ devise_for :customers
   #   resources :reservations, only: [:create]
   # end
   namespace :restaurants do
-    resources :reservations, only: [:index, :show, :edit, :update]
+    resources :reservations, only: [:index, :show] do
+      member do
+        put "confirm"
+      end
+    end
     resources :profiles, only: [:edit, :update]
+    resources :chefs, only: [:index, :edit, :update, :destroy]
+    resources :menus, only: [:index, :edit, :update, :destroy]
+    resources :reviews, only: [:index, :show]
+    # get "reservations/:id/confirm", to: "reservations#confirm"
   end
 
   namespace :customers do
-    resources :restaurants, only: :index # when you wanna add a new route, do like this -> [:index, :show]
+    resources :restaurants, only: [:index, :show] # when you wanna add a new route, do like this -> [:index, :show]
   end
 end
