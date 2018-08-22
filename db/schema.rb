@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2018_08_22_102827) do
   create_table "reservations", force: :cascade do |t|
     t.datetime "time"
     t.string "request"
+    t.string "status", default: "pending", null: false
     t.bigint "restaurant_id"
     t.bigint "customer_id"
     t.integer "seats"

@@ -1,4 +1,6 @@
 class Restaurants::ReservationsController < ApplicationController
+  require 'date'
+
   def index
     skip_policy_scope
     @reservations = Reservation.all
