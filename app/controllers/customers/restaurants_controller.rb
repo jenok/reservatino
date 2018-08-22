@@ -24,8 +24,8 @@ class Customers::RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
 
     @markers = [{
-      lat: @equipment.latitude,
-      lng: @equipment.longitude
+      lat: @restaurant.latitude,
+      lng: @restaurant.longitude
     }]
 
     # you can ignore this for now. Don't delete it.
