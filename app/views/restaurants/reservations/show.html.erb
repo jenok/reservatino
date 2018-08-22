@@ -6,8 +6,14 @@
   <div class="card-reservation-show">
     <p> Customer Name: <%= @customer.name %> </p>
     <p> Customer ID: <%= @reservation.customer_id %> </p>
-    <p> Schedule: <%= @reservation.time %> </p>
+    <p> Time: <%= @reservation.time %> </p>
+    <p> Status: <%= @reservation.status %> </p>
+    <p> Seats: <%= @reservation.seats %> </p>
+    <p> Request: <%= @reservation.request %> </p>
+    <% if @reservation.status =="pending" %>
+      <%= link_to "Confirm", edit_restaurants_reservation_path, class: "btn btn-warning" %>
+    <% end %>
   </div>
-
+  <br>
   <%= link_to "Back", restaurants_reservations_path %>
 </div>

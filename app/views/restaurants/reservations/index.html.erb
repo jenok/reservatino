@@ -4,6 +4,7 @@
 
   <%= link_to "Change Password", edit_restaurant_registration_path, class: "btn btn-primary" %>
   <%= link_to "Edit Profile", edit_restaurants_profile_path(current_restaurant), class: "btn btn-warning" %>
+  <%= link_to "History", restaurants_reservations_path, class: "btn btn-danger" %>
 
   <hr>
 
@@ -22,7 +23,7 @@
       <hr>
 
       <div class="card">
-        <p>Confirmed</p>
+        <p>Confirmed (in latest 7 days) </p>
         <% @reservations.each do |reservation| %>
           <% if reservation.status == "confirmed" %>
             <%= reservation.time %>

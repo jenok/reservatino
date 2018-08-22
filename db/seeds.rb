@@ -6,3 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require "open-uri"
+require "yaml"
+
+Booking.destroy_all
+Equipment.destroy_all
+User.destroy_all
+
+customer = Customer.new(
+
+
+  )
+customer.save!
+
+restaurant = restaurant.new(
+
+
+  )
+restaurant.save!
