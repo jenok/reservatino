@@ -8,6 +8,7 @@ class Restaurants::ProfilesController < ApplicationController
     skip_policy_scope
     @restaurant = Restaurant.find(params[:id])
     @restaurant.update(restaurant_params)
+    redirect_to root_path
   end
 
   private

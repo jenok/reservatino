@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Restaurants::Menus#index</h1>
+
+
+  <% @menus.each do |menu| %>
+    <div class="card">
+      <p> <%= menu.name %> </p>
+      <p> <%= menu.price %> </p>
+      <p> <%= link_to "Edit", edit_restaurants_menu_path(menu), class: "btn btn-primary" %></p>
+      <p> <%= link_to "Delete", restaurants_menu_path(menu), method: :delete, class: "btn btn-danger" %></p>
+    </div>
+  <% end %>
+
+
+  <%= link_to "Back", root_path%>
+
+</div>
+
