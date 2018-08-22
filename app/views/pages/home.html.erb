@@ -5,47 +5,25 @@
   <hr>
   <%= render "shared/card" %>
 
-  <%= link_to "GO TO RESTAURANT INDEX", customers_restaurants_path %>
-
   <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://unsplash.com/search/photos/restaurants');">
-    <div>
-      <h1>Reservatino</h1>
-    </div>
+
     <div class="banner-content">
+      <h1>Book a table for every occasion</h1>
       <p><span id="banner-typed-text"></span></p>
     </div>
-    <div class="banner-content">
-      <%= form_tag root_path, method: :get do %>
-      <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-        placeholder: "Find equipment"
-        %>
-        <%= submit_tag 'Go!', class: "btn-treehouse" %>
-        <% end %>
-    </div>
-  </div>
+
+    <div class="banner-search">
+      <!-- <div class="form-wrapper"> -->
+       <%= simple_form_for :search, method: "get", html: { class: "form-inline"} do |f| %>
+         <%= f.input :starts_at, as: :string, required: false, label: false, placeholder: "12 March...", input_html: {class: "datepicker"} %>
+         <%= f.input :city, as: :string, required: false, label: false, placeholder: "Berlin..." %>
+         <%= f.button :submit, "Go", class: "btn btn-primary" %>
+       <% end %>
+     <!-- </div> -->
+   </div>
+   <div class="white"></div>
+
+ </div>
 
 
-  <!-- card-restaurant-landingpage -->
-  <div class="blog-card">
-    <div class="title-content">
-      <h3><a href="#">Tim Raue</a></h3>
-      <div class="intro"> <a href="#">Berlin</a> </div>
-    </div>
-    <div class="card-info">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim...
-      <a href="#">Make a Reservation!<span class="licon icon-arr icon-black"></span></a>
-    </div>
-    <div class="utility-info">
-      <ul class="utility-list">
-        <li><span class="licon icon-like"></span><a href="#">2</a></li>
-        <li><span class="licon icon-com"></span><a href="#">12</a></li>
-        <li><span class="licon icon-dat"></span>03 jun 2017</li>
-        <li><span class="licon icon-tag"></span><a href="#">Photos</a>, <a href="#">Nice</a></li>
-      </ul>
-    </div>
-    <div class="gradient-overlay"></div>
-    <div class="color-overlay"></div>
-  </div> <!-- /.blog-card -->
-</div>
+

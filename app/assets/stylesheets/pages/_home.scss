@@ -1,11 +1,11 @@
 
 .banner {
+  padding: 250px;
   color: white;
   text-align: center;
   height: 100vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
-  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -21,4 +21,12 @@
   color: rgb(255, 255, 255);
   opacity: 0.6;
   margin-bottom: 30px;
+}
+
+.banner-search {
+  display: flex;
+  justify-content: center;
+  form {
+    display: flex;
+  }
 }
