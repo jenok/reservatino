@@ -2,6 +2,7 @@ class Customers::RestaurantsController < ApplicationController
   skip_before_action :should_authenticate_customer!, only: [:index, :show]
 
   def index
+    raise
     skip_policy_scope
     @restaurants = Restaurant.all
 
