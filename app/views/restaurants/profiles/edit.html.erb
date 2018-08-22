@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Edit Profile with simple_form</h2>
+  <h2>Restaurant::Profile#edit</h2>
   <%= simple_form_for(@restaurant, url: restaurants_profile_path(@restaurant)) do |f| %>
       <%= f.input :category%>
       <%= f.input :dresscode%>
@@ -8,8 +8,9 @@
       <%= f.input :cuisine%>
       <%= f.input :tel%>
       <%= f.input :city%>
-      <%= f.input :street%>
-      <%= f.input :zipcode%>
+      <%= f.input :address%>
+      <%= f.file_field :pictures, multiple: true %>
+
       <%= f.submit "Save", class: "btn btn-primary" %>
       <% end %>
 </div>
