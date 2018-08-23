@@ -31,16 +31,16 @@ customer4.save!
 
 
 
-restaurant = Restaurant.new(email: 'restaurant1@xyz.com', name: "Tim Raue", password: "123123", opening_hours: "9:00-23:00", category: "high-end", style: "old-fashioned", cuisine: "french", tel: "08156666666", country: "Germany", city: "Berlin", address: "Rudi Dutschkestr.26")
+restaurant = Restaurant.new(email: 'restaurant1@xyz.com', name: "Tim Raue", password: "123123", opening_hours: "9:00-23:00", category: "high-end", style: "old-fashioned", cuisine: "french", tel: "08156666666", country: "Germany", city: "Berlin", address: "Rudi Dutschkestr.26", picture: "/image/upload/v1534930534/TRLogo.jpg")
 restaurant.save!
 
-restaurant2 = Restaurant.new(email: 'restaurant2@xyz.com', name: "McD Ostbahnhof", password: "123123", opening_hours: "9:00-23:00", category: "cheap", style: "hip", cuisine: "americano", tel: "081573223", country: "Germany", city: "Berlin", address: "Am Ostbahnhof 9")
+restaurant2 = Restaurant.new(email: 'restaurant2@xyz.com', name: "McD Ostbahnhof", password: "123123", opening_hours: "9:00-23:00", category: "cheap", style: "hip", cuisine: "americano", tel: "081573223", country: "Germany", city: "Berlin", address: "Am Ostbahnhof 9", picture: "/image/upload/v1534930553/TraubeTonbach.jpg")
 restaurant2.save!
 
-restaurant3 = Restaurant.new(email: 'restaurant3@xyz.com', name: "McD Hermannplatz", password: "123123", opening_hours: "9:00-23:00", category: "cheap", style: "hip", cuisine: "americano", tel: "081573223", country: "Germany", city: "Berlin", address: "Hermannpl. 2-3")
+restaurant3 = Restaurant.new(email: 'restaurant3@xyz.com', name: "McD Hermannplatz", password: "123123", opening_hours: "9:00-23:00", category: "cheap", style: "hip", cuisine: "americano", tel: "081573223", country: "Germany", city: "Berlin", address: "Hermannpl. 2-3", picture: "/image/upload/v1534930604/Restaurant-FACIL-Berlin.jpg")
 restaurant3.save!
 
-restaurant4 = Restaurant.new(email: 'restaurant4@xyz.com', name: "McD Alexanderplatz", password: "123123", opening_hours: "9:00-23:00", category: "cheap", style: "hip", cuisine: "americano", tel: "081573223", country: "Germany", city: "Berlin", address: "Karl-Liebknecht-Str. 13")
+restaurant4 = Restaurant.new(email: 'restaurant4@xyz.com', name: "McD Alexanderplatz", password: "123123", opening_hours: "9:00-23:00", category: "cheap", style: "hip", cuisine: "americano", tel: "081573223", country: "Germany", city: "Berlin", address: "Karl-Liebknecht-Str. 13", picture: "/image/upload/v1534930534/TRLogo.jpg")
 restaurant4.save!
 
 
@@ -62,8 +62,10 @@ reservation4.save!
 review = Review.new(rating: 3, comment: "Great!", customer: customer4, restaurant: restaurant)
 review.save!
 
-review2 = Review.new(rating: 1, comment: "Shit!", customer: customer4, restaurant: restaurant2)
-review2.save!
+review2 = Review.create(rating: 1, comment: "Shit!", customer: customer, restaurant: restaurant2)
+review2 = Review.create(rating: 1, comment: "Greate", customer: customer2, restaurant: restaurant2)
+review2 = Review.create(rating: 1, comment: "Soso", customer: customer3, restaurant: restaurant2)
+review2 = Review.create(rating: 1, comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil suscipit tempora impedit numquam, nam porro velit consequatur libero ad et deleniti provident quos distinctio eaque, deserunt odio a laudantium quibusdam!", customer: customer4, restaurant: restaurant2)
 
 review3 = Review.new(rating: 2, comment: "Average!", customer: customer4, restaurant: restaurant3)
 review3.save!
@@ -102,6 +104,7 @@ menu4.save!
 
 
 # image = Image.new(image_url: "http://res.cloudinary.com/dxhdlrmdm/image/upload/v1534930553/TraubeTonbach.jpg")
+
 # image.save!
 
 # image2 = Image.new(image_url: "http://res.cloudinary.com/dxhdlrmdm/image/upload/v1534930604/Restaurant-FACIL-Berlin.jpg")
