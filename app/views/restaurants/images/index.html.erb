@@ -1,14 +1,9 @@
 <div class="container">
   <h1>Restaurants::images#index</h1>
-  <%= @images.first.restaurant_id %>
-  <%= @images.first.image_url %>
-  <%= current_restaurant.id %>
 
-  <% @images.each do |image| %>
-    <div class="card">
-      <% if image.restaurant_id == current_restaurant.id %>
-      <%= form.file_field :images, multiple: true %>
-      <% end %>
-    </div>
+  <% current_restaurant.pictures.each do |picture| %>
+    <%= cl_image_tag picture, height: 300, width: 400, crop: :fill %>
   <% end %>
 </div>
+
+
