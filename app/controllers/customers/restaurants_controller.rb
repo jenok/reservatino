@@ -28,11 +28,11 @@ class Customers::RestaurantsController < ApplicationController
       lng: @restaurant.longitude
     }]
 
+    @reservation = Reservation.new
+    @customer = current_customer
+    @reservation.restaurant = @restaurant
+    @reservation.customer = @customer
 
-    # you can ignore this for now. Don't delete it.
-    # set a show method and link index restaurant card to each show page
-    # once you set this up, go make a view file for this. It will be
-    # views/customers/restaurants/show.html.erb
   end
 
    private
@@ -41,3 +41,5 @@ class Customers::RestaurantsController < ApplicationController
     params.require(:restaurant).permit(:category, :name, :cuisine, :city, :category)
   end
 end
+
+

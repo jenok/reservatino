@@ -27,6 +27,13 @@
 
       <%= cl_image_tag @restaurant.picture, class: "img-tag-card" %>
 
+      <%= simple_form_for customers_reservations_path, html: {class: "datepicker-form"}, method: "post" do |f| %>
+            <%= f.input :time, as: :string, required: true, input_html: {class: "datepicker"} %>
+            <%= f.input :seats, as: :integer, required: true %>
+            <%= f.input :request, as: :integer, required: false %>
+            <%= f.button :submit, "Reserve", class: "btn btn-treehouse btn-equipment-reserve" %>
+      <% end %>
+
     <div>
     <%= link_to "Reserve now", restaurants_reviews_path, class: "btn btn-primary" %>
     </div>

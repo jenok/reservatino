@@ -13,7 +13,7 @@ class Customers::ReviewsController < ApplicationController
 
   private
   def set_restaurant
-    @restaurant = current_customer
+    @restaurant = current_restaurant
   end
 
   def set_review

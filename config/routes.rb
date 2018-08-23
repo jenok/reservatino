@@ -41,7 +41,7 @@ devise_for :customers
   namespace :customers do
     resources :restaurants, only: [:index, :show] # when you wanna add a new route, do like this -> [:index, :show]
     resources :reviews, only: [:new, :create, :edit, :update, :destroy]
-    resources :reservations, only: [:index] do
+    resources :reservations, only: [:index, :create] do
       member do
         put "cancel"
       end
