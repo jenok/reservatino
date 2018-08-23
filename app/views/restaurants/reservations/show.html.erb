@@ -6,13 +6,13 @@
   <div class="card-reservation-show">
     <p> Customer Name: <%= @customer.name %> </p>
     <p> Customer ID: <%= @reservation.customer_id %> </p>
+    <p> Restaurant ID: <%= @reservation.restaurant_id %> </p>
     <p> Time: <%= @reservation.time %> </p>
     <p> Status: <%= @reservation.status %> </p>
     <p> Seats: <%= @reservation.seats %> </p>
     <p> Request: <%= @reservation.request %> </p>
     <% if @reservation.status =="pending" %>
       <%= link_to "Confirm", confirm_restaurants_reservation_path(@reservation), class: "btn btn-primary", method: :put %>
-      <%#= link_to "Confirm", restaurants_path, class: "btn btn-warning" %>
     <% end %>
   </div>
   <br>

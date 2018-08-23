@@ -7,8 +7,8 @@ class ApplicationController < ActionController::Base
   before_action :should_authenticate_customer!
 
   # Pundit: white-list approach.
-  after_action :verify_authorized, except: [:index, :show, :edit, :update, :confirm, :destroy], unless: :skip_pundit?
-  after_action :verify_policy_scoped, only: [:index, :show, :edit, :update], unless: :skip_pundit?
+  after_action :verify_authorized, except: [:index, :edit, :update, :confirm, :destroy], unless: :skip_pundit?
+  after_action :verify_policy_scoped, only: [:index, :show], unless: :skip_pundit?
 
   # Uncomment when you *really understand* Pundit!
   # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
@@ -31,6 +31,13 @@ class ApplicationController < ActionController::Base
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   end
 
+  def pundit_user
+    if restaurant_signed_in?
+      current_restaurant
+    elsif customer_signed_in?
+      current_customer
+    end
+  end
 end
 
 
