@@ -1,8 +1,10 @@
 
-.card {
+.card-restaurant {
   position:relative;
   height: 200px;
   width: 500px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 
@@ -54,6 +56,7 @@ background-color: #EDEDED;
 .card-reservation {
   background-color: #EDEDED;
   padding: 20px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .2);
 }
 
 .card-reservation-show {

@@ -3,7 +3,7 @@
     <div class="row">
       <% @restaurants.each do |restaurant| %>
 
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+        <div class="card-restaurant" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
           <% if restaurant.picture_url %>
             <%= image_tag restaurant.picture_url, class: "img-tag-card" %>
           <% end %>

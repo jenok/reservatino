@@ -1,0 +1,80 @@
+
+<div class="container">
+  <div class="wrapper-white">
+    <h1>Reservation Manager</h1>
+
+    <div class="row">
+        <div class="card-reservation">
+          <h3>Confirmed</h3>
+          <% @reservations.each do |reservation| %>
+            <% if reservation.status == "confirmed" %>
+              <p> time: <%= reservation.time %> </p>
+              <!-- <p> <%= link_to reservation, restaurants_reservation_path(reservation) %> </p> -->
+            <% end %>
+          <% end %>
+        </div>
+
+        <hr>
+
+        <div class="card-reservation">
+          <h3>Pending</h3>
+          <% @reservations.each do |reservation| %>
+            <% if reservation.status == "pending" %>
+              <p> <%= reservation.time %>
+                  time: <%= reservation.time %>
+                  seats: <%= reservation.seats %>
+                  name: <%= reservation.customer.name %>
+                  request: (<%= reservation.request %>)
+                  <%= link_to "Restaurant Info", customers_restaurant_path(reservation.restaurant), class: "btn btn-primary"  %>
+          <%= link_to "Cancel", cancel_customers_reservation_path(reservation), class: "btn btn-success", method: :put %>  </p>
+            <% end %>
+          <% end %>
+        </div>
+
+        <hr>
+
+        <div class="card-reservation">
+          <h3>Finished</h3>
+          <% @reservations.each do |reservation| %>
+            <% if reservation.status == "declined"  %>
+              <p> time: <%= reservation.time %>
+              seats: <%= reservation.seats %>
+              <%= link_to "Write review", new_customers_review_path, class: "btn btn-danger" %> </p>
+            <% end %> </p>
+          <% end %>
+        </div>
+
+
+        <hr>
+
+
+        <div class="card-reservation">
+          <h3>Declined</h3>
+          <% @reservations.each do |reservation| %>
+            <% if reservation.status == "declined" %>
+              <p> time: <%= reservation.time %>
+              seats: <%= reservation.seats %> </p>
+              <!-- <p> <%= link_to reservation, restaurants_reservation_path(reservation) %> -->
+            <% end %> </p>
+          <% end %>
+        </div>
+
+        <hr>
+
+
+        <div class="card-reservation">
+          <h3>Canceled</h3>
+          <% @reservations.each do |reservation| %>
+            <% if reservation.status == "canceled" %>
+              <p> time: <%= reservation.time %>
+              seats: <%= reservation.seats %> </p>
+              <!-- <p> <%= link_to reservation, restaurants_reservation_path(reservation) %> -->
+            <% end %>
+          <% end %>
+        </div>
+
+
+    </div>
+  </div>
+  <br> <br>
+</div>
