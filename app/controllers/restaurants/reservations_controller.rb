@@ -14,7 +14,7 @@ class Restaurants::ReservationsController < ApplicationController
   def confirm
     skip_policy_scope
     @reservation = Reservation.find(params[:id])
-    @reservation.status = "confirm"
+    @reservation.status = "confirmed"
     @reservation.save
     redirect_to restaurants_reservations_path
   end
