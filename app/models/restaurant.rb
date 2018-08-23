@@ -9,5 +9,5 @@ class Restaurant < ApplicationRecord
          :recoverable, :rememberable, :validatable
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
-  mount_uploaders :pictures, ImageUploader
+  mount_uploaders :pictures, PictureUploader
 end
