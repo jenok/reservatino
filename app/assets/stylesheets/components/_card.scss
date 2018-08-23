@@ -1,50 +1,74 @@
- .img-tag-card {
-    height: 100%;
-    width: 100%;
-     }
 
- .card:hover {
- opacity: 0.9;
- }
+.card {
+  position:relative;
+  height: 200px;
+  width: 500px;
+}
 
- .card-category {
+
+.card-category {
  position: absolute;
  top: 10px;
  left: 10px;
  font-size: 15px;
  text-transform: uppercase;
+ color: #258EA6;
  }
 
-  .card-description {
+.card-name {
+ font-size: 40px;
+ text-align: center;
+ color: #258EA6;
+ }
+
+ .card-address {
+ font-size: 14px;
+ position: absolute;
+ bottom: 10px;
+ right: 10px;
+ color: #258EA6;
+ }
+
+ .card-link{
   position: absolute;
   bottom: 10px;
   left: 10px;
-   }
-
- .card-description h2 {
- font-size: 24px;
- text-align: left;
+  color: #258EA6;
  }
 
- .card-description p {
- font-size: 14px;
+.card-link:hover {
+ opacity: 1;
  }
 
- .card-link {
- position: absolute;
- top: 0;
- bottom: 0;
- right: 0;
- width: 100%;
- z-index: 2;
- background: black;
- opacity: 0;
+
+  .img-tag-card {
+  position: absolute;
+
  }
 
- .card-link:hover {
- opacity: 0.1;
- }
 
-.card {
-background-color: #eae7e7;
-}
+
+
+
+//   // .card-description {
+//   // bottom: 10px;
+//   // left: 10px;
+//   //  }
+
+
+
+
+
+ // .card-link {
+ // position: relative;
+ // top: 0;
+ // bottom: 0;
+ // right: 0;
+ // width: 100%;
+ // z-index: 2;
+ // background: black;
+ // opacity: 1;
+ // }
+
+
+
