@@ -15,7 +15,7 @@
         <li><%= @restaurant.city %></li>
         <li><%= @restaurant.country %></li>
       </ul>
-      <%= cl_image_tag @restaurant.images.first.image_url, class: "img-tag-card" %>
+      <%= cl_image_tag @restaurant.pictures.first, class: "img-tag-card" %>
     </div>
     <%= link_to "Back", root_path, class: 'card-link' %>
     <%= render "shared/map" %>

@@ -57,13 +57,6 @@ ActiveRecord::Schema.define(version: 2018_08_22_164036) do
     t.index ["restaurant_id"], name: "index_menus_on_restaurant_id"
   end
 
-  create_table "profile_attachments", force: :cascade do |t|
-    t.integer "profile_id"
-    t.string "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "reservations", force: :cascade do |t|
     t.datetime "time"
     t.string "request"
@@ -75,13 +68,6 @@ ActiveRecord::Schema.define(version: 2018_08_22_164036) do
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_reservations_on_customer_id"
     t.index ["restaurant_id"], name: "index_reservations_on_restaurant_id"
-  end
-
-  create_table "restaurant_attachments", force: :cascade do |t|
-    t.integer "restaurant_id"
-    t.string "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "restaurants", force: :cascade do |t|
