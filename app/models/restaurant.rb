@@ -1,7 +1,7 @@
 class Restaurant < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  mount_uploaders :pictures, PictureUploader
+  mount_uploader :picture, PictureUploader
 
   has_many :reviews
   has_many :menus

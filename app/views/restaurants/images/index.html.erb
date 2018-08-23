@@ -1,9 +1,7 @@
 <div class="container">
   <h1>Restaurants::images#index</h1>
 
-  <% current_restaurant.pictures.each do |picture| %>
-    <%= cl_image_tag picture, height: 300, width: 400, crop: :fill %>
-  <% end %>
+    <%= cl_image_tag current_restaurant.picture, height: 300, width: 400, crop: :fill %>
 </div>
 
 
