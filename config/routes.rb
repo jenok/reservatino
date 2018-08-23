@@ -27,6 +27,7 @@ devise_for :customers
     resources :reservations, only: [:index, :show] do
       member do
         put "confirm"
+        put "decline"
       end
     end
     resources :profiles, only: [:edit, :update]
