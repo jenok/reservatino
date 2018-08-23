@@ -62,8 +62,10 @@ reservation4.save!
 review = Review.new(rating: 3, comment: "Great!", customer: customer4, restaurant: restaurant)
 review.save!
 
-review2 = Review.new(rating: 1, comment: "Shit!", customer: customer4, restaurant: restaurant2)
-review2.save!
+review2 = Review.create(rating: 1, comment: "Shit!", customer: customer, restaurant: restaurant2)
+review2 = Review.create(rating: 1, comment: "Greate", customer: customer2, restaurant: restaurant2)
+review2 = Review.create(rating: 1, comment: "Soso", customer: customer3, restaurant: restaurant2)
+review2 = Review.create(rating: 1, comment: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil suscipit tempora impedit numquam, nam porro velit consequatur libero ad et deleniti provident quos distinctio eaque, deserunt odio a laudantium quibusdam!", customer: customer4, restaurant: restaurant2)
 
 review3 = Review.new(rating: 2, comment: "Average!", customer: customer4, restaurant: restaurant3)
 review3.save!
