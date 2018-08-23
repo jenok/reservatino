@@ -47,28 +47,25 @@
  }
 
 
+.card {
+background-color: #EDEDED;
+}
 
+.card-reservation {
+  background-color: #EDEDED;
+  padding: 20px;
+}
 
+.card-reservation-show {
+  background-color: white;
+  padding: 15px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .4);
+}
 
-//   // .card-description {
-//   // bottom: 10px;
-//   // left: 10px;
-//   //  }
+.card-chef {
+  background-color: #EDEDED;
+  padding: 20px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .2);
 
-
-
-
-
- // .card-link {
- // position: relative;
- // top: 0;
- // bottom: 0;
- // right: 0;
- // width: 100%;
- // z-index: 2;
- // background: black;
- // opacity: 1;
- // }
-
-
+}
 

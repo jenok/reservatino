@@ -1,15 +1,18 @@
 <div class="container">
-  <h1>Restaurants::Chefs#Index</h1>
+  <div class="wrapper-white">
+  <h1>Chefs Manager</h1>
   <hr>
 
   <% @chefs.each do |chef|  %>
-    <div class="card">
-      <p> <%= chef.name %> restaurant ID: <%= chef.restaurant_id %> <%= link_to "Edit", edit_restaurants_chef_path(chef), class: "btn btn-primary" %> <%= link_to "Delete", restaurants_chef_path(chef), method: :delete, class: "btn btn-danger"  %></p>
+    <div class="card-chef">
+      <p> <%= chef.name %> <%= link_to "Edit", edit_restaurants_chef_path(chef), class: "btn btn-primary" %> <%= link_to "Delete", restaurants_chef_path(chef), method: :delete, class: "btn btn-danger"  %></p>
       <p> <%= chef.profile %> </p>
 
     </div>
   <% end %>
+  <hr>
+  <%= link_to "Back", root_path, class: "btn btn-orange" %>
 
-  <%= link_to "Back", root_path %>
+  </div>
   <br> <br>
 </div>
