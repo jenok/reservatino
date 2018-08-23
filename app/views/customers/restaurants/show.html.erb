@@ -15,9 +15,24 @@
         <li><%= @restaurant.city %></li>
         <li><%= @restaurant.country %></li>
       </ul>
+
+      <% @restaurant.reviews.each do |review| %>
+      <div class="card">
+      <%= review.comment %>
+      </div>
+      <div class="rating">
+      <%= review.rating %>
+      </div>
+      <% end %>
+
       <%= cl_image_tag @restaurant.pictures.first, class: "img-tag-card" %>
+
+    <div>
+    <%= link_to "Reserve now", restaurants_reviews_path, class: "btn btn-primary" %>
     </div>
-    <%= link_to "Back", root_path, class: 'card-link' %>
+
+    </div>
+    <%= link_to "Back", root_path %>
     <%= render "shared/map" %>
   </div>
 </div>

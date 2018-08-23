@@ -28,6 +28,7 @@ class Customers::RestaurantsController < ApplicationController
       lng: @restaurant.longitude
     }]
 
+
     # you can ignore this for now. Don't delete it.
     # set a show method and link index restaurant card to each show page
     # once you set this up, go make a view file for this. It will be
@@ -40,3 +41,15 @@ class Customers::RestaurantsController < ApplicationController
     params.require(:restaurant).permit(:category, :name, :cuisine, :city, :category)
   end
 end
+
+
+  def show
+    @equipment = Equipment.find(params[:id])
+    @booking = Booking.new
+    @booking.equipment = @equipment
+    @booking.user = current_user
+    @markers = [{
+      lat: @equipment.latitude,
+      lng: @equipment.longitude
+    }]
+  end
