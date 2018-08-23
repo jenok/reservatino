@@ -33,6 +33,7 @@ devise_for :customers
     resources :chefs, only: [:index, :edit, :update, :destroy]
     resources :menus, only: [:index, :edit, :update, :destroy]
     resources :reviews, only: [:index, :show]
+    resources :images, only: [:index, :update, :destroy]
     # get "reservations/:id/confirm", to: "reservations#confirm"
   end
 

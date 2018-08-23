@@ -1,9 +1,5 @@
 <div class="container">
   <h1>Reservatino#home</h1>
-  <p style="color:green">SET A BANNE IMAGE WITH SHORT DESCRIPTION</p>
-
-  <hr>
-  <%= render "shared/card" %>
 
   <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://unsplash.com/search/photos/restaurants');">
 
@@ -15,16 +11,15 @@
     <div class="banner-search">
       <!-- <div class="form-wrapper"> -->
        <%= simple_form_for :search, method: "get", html: { class: "form-inline"} do |f| %>
-         <%= f.input :starts_at, as: :string, required: false, label: false, placeholder: "12 March...", input_html: {class: "datepicker"} %>
-         <%= f.input :city, as: :string, required: false, label: false, placeholder: "Berlin..." %>
-         <%= f.button :submit, "Go", class: "btn btn-primary" %>
+       <%= f.input :starts_at, as: :string, required: false, label: false, placeholder: "12 March...", input_html: {class: "datepicker"} %>
+       <%= f.input :city, as: :string, required: false, label: false, placeholder: "Berlin..." %>
+       <%= f.button :submit, "Go", class: "btn btn-primary" %>
        <% end %>
-     <!-- </div> -->
+     </div>
+
    </div>
-   <div class="white"></div>
-
- </div>
-
+    <%= render "shared/card" %>
+    <%= render "shared/map" %>
 
 
   <%= render "shared/card" %>

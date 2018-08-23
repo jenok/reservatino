@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_22_102827) do
+ActiveRecord::Schema.define(version: 2018_08_22_164036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,13 @@ ActiveRecord::Schema.define(version: 2018_08_22_102827) do
     t.index ["restaurant_id"], name: "index_menus_on_restaurant_id"
   end
 
+  create_table "profile_attachments", force: :cascade do |t|
+    t.integer "profile_id"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "reservations", force: :cascade do |t|
     t.datetime "time"
     t.string "request"
@@ -68,6 +75,13 @@ ActiveRecord::Schema.define(version: 2018_08_22_102827) do
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_reservations_on_customer_id"
     t.index ["restaurant_id"], name: "index_reservations_on_restaurant_id"
+  end
+
+  create_table "restaurant_attachments", force: :cascade do |t|
+    t.integer "restaurant_id"
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -90,6 +104,7 @@ ActiveRecord::Schema.define(version: 2018_08_22_102827) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.json "pictures"
     t.index ["email"], name: "index_restaurants_on_email", unique: true
     t.index ["reset_password_token"], name: "index_restaurants_on_reset_password_token", unique: true
   end
