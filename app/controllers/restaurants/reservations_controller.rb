@@ -1,33 +1,35 @@
 class Restaurants::ReservationsController < ApplicationController
-  require 'date'
+  before_action :set_restaurant, only: [:show, :confirm]
+  before_action :set_reservation, only: [:show, :confirm]
 
   def index
-    skip_policy_scope
-    @reservations = Reservation.all
+    @reservations = policy_scope Reservation
   end
+
   def show
-    skip_policy_scope
-    @reservation = Reservation.find(params[:id])
+    authorize @reservation
     @customer = Customer.find(@reservation.customer_id)
   end
 
   def confirm
-    skip_policy_scope
-    @reservation = Reservation.find(params[:id])
     @reservation.status = "confirmed"
     @reservation.save
     redirect_to restaurants_reservations_path
   end
 
-  def update
-    skip_policy_scope
+  private
+
+  def set_restaurant
+    @restaurant = current_restaurant
+  end
+
+  def set_reservation
     @reservation = Reservation.find(params[:id])
-    @reservation.update(reservation_params)
-    redirect_to restaurants_reservations_path
   end
 
   def reservation_params
     params.require(:reservation).permit(:status)
   end
+
 end
 

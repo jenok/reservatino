@@ -1,6 +1,8 @@
 <div class="container">
   <h1>Restaurants::Reservations#index</h1>
   <p>Find me in app/views/restaurants/reservations/index.html.erb</p>
+  <p> current_restaurant ID: <%= current_restaurant.id %> </p>
+
 
   <%= link_to "Change Password", edit_restaurant_registration_path, class: "btn btn-primary" %>
   <%= link_to "Edit Profile", edit_restaurants_profile_path(current_restaurant), class: "btn btn-warning" %>
@@ -19,6 +21,7 @@
         <% @reservations.each do |reservation| %>
           <% if reservation.status == "pending" %>
             <p> <%= reservation.time %>
+                restaurant ID: <%= reservation.restaurant.id %>
                 time: <%= reservation.time %>
                 seats: <%= reservation.seats %>
                 name: <%= reservation.customer.name %>
