@@ -7,6 +7,14 @@
   margin-left: auto;
 }
 
+.card-restaurant-show {
+  width: 500px;
+  padding: 30px;
+  margin-right: 150px;
+  background-color: white;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .4);
+}
+
 
 .card-category {
  position: absolute;
@@ -72,3 +80,12 @@ background-color: #EDEDED;
 
 }
 
+.card-reviews {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: white;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .4);
+  padding-top: 1px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+}

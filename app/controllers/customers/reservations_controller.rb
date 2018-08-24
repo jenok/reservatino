@@ -1,5 +1,5 @@
 class Customers::ReservationsController < ApplicationController
-  before_action :set_restaurant, only: [:show]
+  before_action :set_restaurant, only: [:show, :create]
   before_action :set_reservation, only: [:show, :cancel]
 
   def index
@@ -9,6 +9,15 @@ class Customers::ReservationsController < ApplicationController
   def cancel
     @reservation.status = "canceled"
     @reservation.save
+    redirect_to customers_reservations_path
+  end
+
+  def create
+    @reservation = Reservation.new
+    authorize @reservation
+
+    @reservation.customer = current_customer
+    @reservation.restaurant = @restaurant
     redirect_to customers_reservations_path
   end
 
