@@ -25,6 +25,7 @@
                 <%= f.input :time, as: :string, required: true, input_html: {class: "datepicker"} %>
                 <%= f.input :seats, as: :integer, required: true %>
                 <%= f.input :request, as: :text, required: false %>
+                <%= hidden_field_tag 'restaurant_id', @restaurant.id %>
                 <%= f.button :submit, "Reserve", class: "btn btn-danger btn-center" %>
           <% end %>
         </div>

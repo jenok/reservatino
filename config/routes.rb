@@ -40,7 +40,9 @@ devise_for :customers
 
   namespace :customers do
     resources :restaurants, only: [:index, :show] do
-      resources :reservations, only: [:create]
+      resources :reservations, only: [:create] do
+        resources :payments, only: [:new, :create]
+      end
     end
     resources :reviews, only: [:new, :create, :edit, :update, :destroy]
     resources :reservations, only: [:index] do

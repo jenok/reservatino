@@ -4,7 +4,7 @@ class Customers::ReviewsController < ApplicationController
 
   def new
     @review = Review.new
-    authorize @restaurant
+    # authorize [:customer, @review]
   end
 
   def create
