@@ -2,21 +2,22 @@
   <div class="container">
     <div class="row">
       <% @restaurants.each do |restaurant| %>
-
-        <div class="card-restaurant" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
-          <% if restaurant.picture_url %>
-            <%= image_tag restaurant.picture_url, class: "img-tag-card" %>
-          <% end %>
+       <div class="col-xs-6">
+        <% if restaurant.picture.blank? %>
+          <div class="card-restaurant" style="background-color: black">
+        <% else %>
+          <div class="card-restaurant" style="background-image: url(<%= image_path restaurant.picture_url %>), linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+        <% end %>
           <div class="card-category"><%= restaurant.category %></div>
           <div class="card-name"><h2><%= restaurant.name %></h2></div>
           <div class="card-address">
-            <p><%= restaurant.address %></p>
-            <p><%= restaurant.city %></p>
-          </div>
-          <%= link_to "Details", customers_restaurant_path(restaurant), class: 'card-link' %>
+            <i class="fas fa-map-marker-alt"></i>
+            <p><%= restaurant.address %>, <%= restaurant.city %></p>
+          </div class="btn-treehouse">
+          <%= link_to "Details", customers_restaurant_path(restaurant), class: 'btn-treehouse card-link' %>
         </div>
         <br>
-
+     </div>
       <% end %>
     </div>
   </div>

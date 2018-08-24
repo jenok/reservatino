@@ -2,12 +2,14 @@ class Restaurants::ProfilesController < ApplicationController
   def edit
     skip_policy_scope
     @restaurant = Restaurant.find(params[:id])
+    authorize @restaurant
   end
 
   def update
     skip_policy_scope
     @restaurant = Restaurant.find(params[:id])
     @restaurant.update(restaurant_params)
+    authorize @restaurant
     redirect_to root_path
   end
 

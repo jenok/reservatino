@@ -17,9 +17,9 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem "pundit"
+gem 'carrierwave', '~> 1.2'
 gem 'cloudinary'
 gem "geocoder"
-gem 'carrierwave', '~> 1.2'
 gem 'money-rails'
 gem 'stripe'
 
