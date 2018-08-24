@@ -7,7 +7,7 @@ class Customers::ReservationsController < ApplicationController
   end
 
   def show
-    @reservation = current_customer.orders.where(state: 'paid').find(params[:id])
+    @reservation = current_customer.reservations.where(status: 'paid').find(params[:id])
   end
 
   def cancel
@@ -25,7 +25,7 @@ class Customers::ReservationsController < ApplicationController
     # @reservation.restaurant.price = restaurant.price,
     authorize [:customer, @reservation]
     if @reservation.save
-      redirect_to customers_reservations_path
+      redirect_to new_customers_restaurant_reservation_payment_path(@reservation.restaurant.id, @reservation.id)
     else
       @markers = [{
         lat: @restaurant.latitude,

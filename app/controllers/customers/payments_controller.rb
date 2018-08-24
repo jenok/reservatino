@@ -1,7 +1,10 @@
-class PaymentsController < ApplicationController
+class Customers::PaymentsController < ApplicationController
     before_action :set_reservation
 
     def new
+      skip_authorization
+      # @payment = Customer::Payment.new
+      # authorize @payment
     end
 
     def create
@@ -12,23 +15,24 @@ class PaymentsController < ApplicationController
 
       charge = Stripe::Charge.create(
         customer:     customer.id,   # You should store this customer id and re-use it.
-        amount:       @order.amount_cents,
-        description:  "Payment for teddy #{@order.teddy_sku} for order #{@order.id}",
-        currency:     @order.amount.currency
+        amount:       @reservation.amount_cents,
+        description:  "Payment for reservation #{@reservation.id}",
+        currency:     @reservation.amount.currency
       )
 
-      @order.update(payment: charge.to_json, state: 'paid')
-      redirect_to order_path(@order)
+      @reservation.update(payment: charge.to_json, status: 'paid')
+      authorize @reservation
+      redirect_to customers_reservations_path
 
     rescue Stripe::CardError => e
       flash[:alert] = e.message
-      redirect_to new_order_payment_path(@order)
+      redirect_to new_customers_restaurant_reservation_payment_path(@reservation)
     end
 
   private
 
     def set_reservation
-      @reservation = current_customer.reservations.where(state: 'pending').find(params[:order_id])
+      @reservation = current_customer.reservations.where(status: 'pending').find(params[:reservation_id])
     end
 end
 

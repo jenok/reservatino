@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(version: 2018_08_24_100335) do
     t.bigint "restaurant_id"
     t.bigint "customer_id"
     t.integer "seats"
+    t.integer "amount_cents", default: 0, null: false
+    t.json "payment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_reservations_on_customer_id"
@@ -86,12 +88,12 @@ ActiveRecord::Schema.define(version: 2018_08_24_100335) do
     t.string "country"
     t.string "city"
     t.string "address"
+    t.integer "amount_cents", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
     t.string "picture"
-    t.integer "price_cents", default: 0, null: false
     t.index ["email"], name: "index_restaurants_on_email", unique: true
     t.index ["reset_password_token"], name: "index_restaurants_on_reset_password_token", unique: true
   end

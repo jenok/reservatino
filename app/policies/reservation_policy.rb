@@ -25,4 +25,8 @@ class ReservationPolicy < ApplicationPolicy
     show?
   end
 
+  def update?
+    show?
+  end
+
 end
