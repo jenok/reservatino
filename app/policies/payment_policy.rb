@@ -1,7 +1,7 @@
-class ReviewPolicy < ApplicationPolicy
+class PaymentPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where(restaurant: user)
+      scope.all
     end
   end
 

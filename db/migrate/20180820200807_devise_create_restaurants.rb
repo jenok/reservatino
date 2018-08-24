@@ -42,6 +42,7 @@ class DeviseCreateRestaurants < ActiveRecord::Migration[5.2]
       t.string :country
       t.string :city
       t.string :address
+      t.monetize :amount, currency: { present: false }
 
 
       t.timestamps null: false

@@ -3,10 +3,15 @@ class Customers::ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :cancel]
 
   def index
-    @reservations = policy_scope Reservation
+    @reservations = policy_scope [:customer, Reservation]
+  end
+
+  def show
+    @reservation = current_customer.reservations.where(status: 'paid').find(params[:id])
   end
 
   def cancel
+    authorize [:customer, @reservation]
     @reservation.status = "canceled"
     @reservation.save
     redirect_to customers_reservations_path
@@ -14,17 +19,27 @@ class Customers::ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new
-    authorize @reservation
-
+    @reservation.status = "pending"
     @reservation.customer = current_customer
     @reservation.restaurant = @restaurant
-    redirect_to customers_reservations_path
+    # @reservation.restaurant.price = restaurant.price,
+    authorize [:customer, @reservation]
+    if @reservation.save
+      redirect_to new_customers_restaurant_reservation_payment_path(@reservation.restaurant.id, @reservation.id)
+    else
+      @markers = [{
+        lat: @restaurant.latitude,
+        lng: @restaurant.longitude
+      }]
+
+      render "customers/restaurants/show"
+    end
   end
 
   private
 
   def set_restaurant
-    @restaurant = current_restaurant
+    @restaurant = Restaurant.find(params[:restaurant_id])
   end
 
   def set_reservation
@@ -35,6 +50,7 @@ class Customers::ReservationsController < ApplicationController
     params.require(:reservation).permit(:status)
   end
 end
+
 
 
 

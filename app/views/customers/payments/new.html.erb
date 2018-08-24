@@ -1,0 +1,19 @@
+<!-- app/views/payments/new.html.erb -->
+<h1>Purchase of teddy </h1>
+<%= form_tag customers_restaurant_reservation_payments_path(@reservation.restaurant, @reservation) do %>
+  <article>
+    <label class="amount">
+      <span>Amount: <%= humanized_money_with_symbol(@reservation.amount) %></span>
+    </label>
+  </article>
+
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-name="My Teddy"
+    data-email="<%= current_customer.email %>"
+    data-description="Teddy <%= @reservation.time.to_s %>"
+    data-amount="<%= @reservation.amount_cents %>"
+    data-currency="<%= @reservation.amount.currency %>"></script>
+
+<% end %>

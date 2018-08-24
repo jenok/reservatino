@@ -20,6 +20,9 @@ gem "pundit"
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary'
 gem "geocoder"
+gem 'money-rails'
+gem 'stripe'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
