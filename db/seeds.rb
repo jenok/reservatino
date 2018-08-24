@@ -45,17 +45,17 @@ restaurant4.save!
 
 
 
-# reservation = Reservation.new(time: DateTime.new(2018,8,25), customer: customer,  seats: 1, restaurant: restaurant)
-# reservation.save!
+reservation = Reservation.new(time: DateTime.new(2018,8,25), customer: customer,  seats: 1, restaurant: restaurant)
+reservation.save!
 
-# reservation2 = Reservation.new(time: DateTime.new(2018,8,25), customer: customer2, seats: 2, restaurant: restaurant2)
-# reservation2.save!
+reservation2 = Reservation.new(time: DateTime.new(2018,8,25), customer: customer2, seats: 2, restaurant: restaurant2)
+reservation2.save!
 
-# reservation3 = Reservation.new(time: DateTime.new(2018,8,25), customer: customer3, seats: 3, restaurant: restaurant3)
-# reservation3.save!
+reservation3 = Reservation.new(time: DateTime.new(2018,8,25), customer: customer3, seats: 3, restaurant: restaurant3)
+reservation3.save!
 
-# reservation4 = Reservation.new(time: DateTime.new(2018,8,25), customer: customer4, seats: 4, restaurant: restaurant4)
-# reservation4.save!
+reservation4 = Reservation.new(time: DateTime.new(2018,8,25), customer: customer4, seats: 4, restaurant: restaurant4)
+reservation4.save!
 
 
 
