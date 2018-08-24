@@ -12,14 +12,19 @@ class Restaurants::ReservationsController < ApplicationController
   end
 
   def confirm
+
     @reservation.status = "confirmed"
+    authorize @reservation
+
     @reservation.save
     redirect_to restaurants_reservations_path
   end
 
   def decline
-    skip_policy_scope
+    # skip_policy_scope
     @reservation.status = "declined"
+    authorize @reservation
+
     @reservation.save
     redirect_to restaurants_reservations_path
   end

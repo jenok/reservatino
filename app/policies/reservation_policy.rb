@@ -17,6 +17,10 @@ class ReservationPolicy < ApplicationPolicy
     show?
   end
 
+  def decline?
+    show?
+  end
+
   def cancel?
     show?
   end
