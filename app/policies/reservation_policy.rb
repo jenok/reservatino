@@ -5,11 +5,23 @@ class ReservationPolicy < ApplicationPolicy
     end
   end
 
+  def create?
+    true
+  end
+
   def show?
     record.restaurant == user
   end
 
   def confirm?
+    show?
+  end
+
+  def decline?
+    show?
+  end
+
+  def cancel?
     show?
   end
 

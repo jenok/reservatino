@@ -1,51 +1,59 @@
 <div class="container">
-  <h1>Restaurants::Reservations#index</h1>
-  <p>Find me in app/views/restaurants/reservations/index.html.erb</p>
-  <p> current_restaurant ID: <%= current_restaurant.id %> </p>
+  <div class="wrapper-white">
+    <h1>Restaurant Admin Page</h1>
 
+    <%= link_to "Change Password", edit_restaurant_registration_path, class: "btn btn-primary" %>
+    <%= link_to "Edit Profile", edit_restaurants_profile_path(current_restaurant), class: "btn btn-warning" %>
+    <%= link_to "Chefs", restaurants_chefs_path, class: "btn btn-info" %>
+    <%= link_to "Menus", restaurants_menus_path, class: "btn btn-success" %>
+    <%= link_to "Review", restaurants_reviews_path, class: "btn btn-primary" %>
+    <%= link_to "Image", restaurants_images_path, class: "btn btn-danger" %>
 
-  <%= link_to "Change Password", edit_restaurant_registration_path, class: "btn btn-primary" %>
-  <%= link_to "Edit Profile", edit_restaurants_profile_path(current_restaurant), class: "btn btn-warning" %>
-  <%= link_to "History", restaurants_reservations_path, class: "btn btn-danger" %>
-  <%= link_to "Chefs", restaurants_chefs_path, class: "btn btn-info" %>
-  <%= link_to "Menus", restaurants_menus_path, class: "btn btn-success" %>
-  <%= link_to "Review", restaurants_reviews_path, class: "btn btn-primary" %>
-  <%= link_to "Image Manager", restaurants_images_path, class: "btn btn-warning" %>
+    <hr>
 
-  <hr>
-
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="card">
-        <p>Pending</p>
-        <% @reservations.each do |reservation| %>
-          <% if reservation.status == "pending" %>
-            <p> <%= reservation.time %>
-                restaurant ID: <%= reservation.restaurant.id %>
-                time: <%= reservation.time %>
-                seats: <%= reservation.seats %>
-                name: <%= reservation.customer.name %>
-                request: (<%= reservation.request %>) </p>
-            <p> <%= link_to reservation, restaurants_reservation_path(reservation) %> </p>
+    <div class="row">
+        <div class="card-reservation">
+          <h3>Pending</h3>
+          <% @reservations.each do |reservation| %>
+            <% if reservation.status == "pending" %>
+              <p> <%= reservation.time %>
+                  time: <%= reservation.time %>
+                  seats: <%= reservation.seats %>
+                  name: <%= reservation.customer.name %>
+                  request: (<%= reservation.request %>) </p>
+              <p> <%= link_to "Reservation Detail", restaurants_reservation_path(reservation) %> </p>
+            <% end %>
           <% end %>
-        <% end %>
-      </div>
+        </div>
 
-      <hr>
+        <hr>
 
-      <div class="card">
-        <p>Confirmed (in latest 7 days, if I could make it on time...) </p>
-        <% @reservations.each do |reservation| %>
-          <% if reservation.status == "confirmed" %>
-            <%= reservation.time %>
-            <p> <%= link_to reservation, restaurants_reservation_path(reservation) %>
-          <% end %> </p>
-        <% end %>
-      </div>
+        <div class="card-reservation">
+          <h3>Confirmed</h3>
+          <% @reservations.each do |reservation| %>
+            <% if reservation.status == "confirmed" %>
+              <p> time: <%= reservation.time %> </p>
+              <p> <%= link_to reservation, restaurants_reservation_path(reservation) %> </p>
+            <% end %>
+          <% end %>
+        </div>
+
+        <hr>
+
+        <div class="card-reservation">
+          <h3>Declined</h3>
+          <% @reservations.each do |reservation| %>
+            <% if reservation.status == "declined" %>
+              <%= reservation.time %>
+              <p> <%= link_to reservation, restaurants_reservation_path(reservation) %>
+            <% end %> </p>
+          <% end %>
+        </div>
     </div>
-  </div>
 
-  <br>
+    <br>
+  </div>
+  <br> <br>
 </div>
 
 

@@ -8,4 +8,8 @@ class ChefPolicy < ApplicationPolicy
   def edit?
     record.restaurant == user
   end
+
+  def update?
+    edit?
+  end
 end

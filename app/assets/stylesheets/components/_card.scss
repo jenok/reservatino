@@ -1,50 +1,91 @@
- .img-tag-card {
-    height: 100%;
-    width: 100%;
-     }
 
- .card:hover {
- opacity: 0.9;
- }
+.card-restaurant {
+  position:relative;
+  height: 200px;
+  width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+}
 
- .card-category {
+.card-restaurant-show {
+  width: 500px;
+  padding: 30px;
+  margin-right: 150px;
+  background-color: white;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .4);
+}
+
+
+.card-category {
  position: absolute;
  top: 10px;
  left: 10px;
  font-size: 15px;
  text-transform: uppercase;
+ color: #258EA6;
  }
 
-  .card-description {
+.card-name {
+ font-size: 40px;
+ text-align: center;
+ color: #258EA6;
+ }
+
+ .card-address {
+ font-size: 14px;
+ position: absolute;
+ bottom: 10px;
+ right: 10px;
+ color: #258EA6;
+ }
+
+ .card-link{
   position: absolute;
   bottom: 10px;
   left: 10px;
-   }
-
- .card-description h2 {
- font-size: 24px;
- text-align: left;
+  color: #258EA6;
  }
 
- .card-description p {
- font-size: 14px;
+.card-link:hover {
+ opacity: 1;
  }
 
- .card-link {
- position: absolute;
- top: 0;
- bottom: 0;
- right: 0;
- width: 100%;
- z-index: 2;
- background: black;
- opacity: 0;
+
+  .img-tag-card {
+  position: absolute;
+
  }
 
- .card-link:hover {
- opacity: 0.1;
- }
 
 .card {
-background-color: #eae7e7;
+background-color: #EDEDED;
+}
+
+.card-reservation {
+  background-color: #EDEDED;
+  padding: 20px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .2);
+}
+
+.card-reservation-show {
+  background-color: white;
+  padding: 15px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .4);
+}
+
+.card-chef {
+  background-color: #EDEDED;
+  padding: 20px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .2);
+
+}
+
+.card-reviews {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: white;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .4);
+  padding-top: 1px;
+  padding-bottom: 10px;
+  padding-left: 15px;
 }
