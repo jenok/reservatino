@@ -12,7 +12,7 @@ class Customers::PaymentsController < ApplicationController
         source: params[:stripeToken],
         email:  params[:stripeEmail]
       )
-      cheat = 100
+      cheat = 1000
       charge = Stripe::Charge.create(
         customer:     customer.id,   # You should store this customer id and re-use it.
         amount:       cheat,
